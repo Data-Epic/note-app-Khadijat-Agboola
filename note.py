@@ -71,7 +71,7 @@ print("This is a Smart Notes Manager. \nBelow are the functions available\n1. Ad
 consent=input("Do you want to use the notes Manager? (Y/N): ")
 while consent.lower()=="y":
 
-    option = int(input("What function do you want to use? 1, 2, 3 or 4? "))
+    option = int(input("What function do you want to use? 1, 2, 3 or 4? "))    #defining all the options
     if option ==1:
         type=input("What type of note, 'text' or 'reminder'? ")
         if type.lower()=="text":
