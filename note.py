@@ -1,7 +1,9 @@
 import datetime     #this is necessary because of the timestamp
-class Note:     #the base class
+'''The class Note is the Parent/Super class. In it, I will define the ID and make it 1, 
+and also make in an incremental value
+Initializing the class, with 'content' as the only attribute needed to be entered'''
+class Note:    
     id = 1  
-
     def __init__(self, content):
         self.id=Note.id
         Note.id += 1
@@ -9,14 +11,14 @@ class Note:     #the base class
         self.created_at=datetime.datetime.now()     #this adds current timestamp to each note added
 
     def display(self):
-        return f"ID: {self.id} {self.content}\ncreated at {self.created_at}"
+        return f"------------------------------------------\nID: {self.id} {self.content}\ncreated at {self.created_at}"
 
 class TextNote(Note):       #The subclass of Note
     def __init__(self, content):
         super().__init__(content)
 
     def display(self):
-        return f"{super().display()}"
+        return f"{super().display()}\n------------------------------------------"
 
 class ReminderNote(Note):       #Subclass of Note with additional feature:reminder_date_and_time
     def __init__(self, content, reminder_date_and_time):
@@ -24,7 +26,7 @@ class ReminderNote(Note):       #Subclass of Note with additional feature:remind
         self.reminder_date_and_time=reminder_date_and_time      #adding reminder date and time as it was not part of Class Note
 
     def display(self):
-        return f"{super().display()}\nreminder date and time: {self.reminder_date_and_time}"    #inheriting display method of Note and additional attribute
+        return f"{super().display()}\nreminder date and time: {self.reminder_date_and_time}\n------------------------------------------"    #inheriting display method of Note and additional attribute
     
 
 class NotesManager:     #Initiating the class NotesManager
@@ -44,9 +46,9 @@ class NotesManager:     #Initiating the class NotesManager
         for note in self.notes:
             if note.id == note_id:
                 self.notes.remove(note)
-                print(f"Note with ID {note_id} has been deleted.")
+                print(f"------------------------------------------\nNote with ID {note_id} has been deleted.\n------------------------------------------")
             else:
-                print(f"No note with ID  {note_id}")
+                print(f"------------------------------------------\nNo note with ID  {note_id}\n------------------------------------------")
 
     def show_notes(self):
         for note in self.notes:
@@ -67,10 +69,10 @@ class NotesManager:     #Initiating the class NotesManager
 #Use case
 my_notes = NotesManager()
 
-print("This is a Smart Notes Manager. \nBelow are the functions available\n1. Add note \n2. Delete note \n3. Show all notes \n4. Search all notes for a given keyword")
+print("------------------------------------------\nThis is a Smart Notes Manager. \nBelow are the functions available\n1. Add note \n2. Delete note \n3. Show all notes \n4. Search all notes for a given keyword")
 consent=input("Do you want to use the notes Manager? (Y/N): ")
 while consent.lower()=="y":
-
+    print("------------------------------------------\nBelow are the functions available\n1. Add note \n2. Delete note \n3. Show all notes \n4. Search all notes for a given keyword")
     option = int(input("What function do you want to use? 1, 2, 3 or 4? "))
     if option ==1:
         type=input("What type of note, 'text' or 'reminder'? ")
