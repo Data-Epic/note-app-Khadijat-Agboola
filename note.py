@@ -1,7 +1,9 @@
 import datetime     #this is necessary because of the timestamp
+
 '''The class Note is the Parent/Super class. In it, I will define the ID and make it 1, 
 and also make in an incremental value
 Initializing the class, with 'content' as the only attribute needed to be entered'''
+
 class Note:    
     id = 1  
     def __init__(self, content):
@@ -54,7 +56,7 @@ class NotesManager:     #Initiating the class NotesManager
         for note in self.notes:
             print(note.display())       #Using the display method defined in class "Note"
     
-    def search_notes(self, keyword):
+    def search_notes(self, keyword):    #defining the search feature which takes just one input-keyword
         result=[]
         for note in self.notes:
             if keyword in note.content:
