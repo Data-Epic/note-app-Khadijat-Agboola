@@ -66,7 +66,7 @@ class NotesManager:     #Initiating the class NotesManager
             for note in result:
                 print(note.display())
 
-#Use case
+'''#Use case
 my_notes = NotesManager()
 
 print("------------------------------------------\nThis is a Smart Notes Manager. \nBelow are the functions available\n1. Add note \n2. Delete note \n3. Show all notes \n4. Search all notes for a given keyword")
@@ -100,4 +100,4 @@ while consent.lower()=="y":
         print("Your input doesn't match any of the options")
         consent=input("Do you want to use the notes Manager? (Y/N): ")
 
-print("Enjoy your day")
+print("Enjoy your day")'''
