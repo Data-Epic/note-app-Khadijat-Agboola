@@ -1,0 +1,7 @@
+{
+    "python.testing.pytestArgs": [
+        "note-app-Khadijat-Agboola"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
+}
